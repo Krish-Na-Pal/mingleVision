@@ -161,7 +161,7 @@ class ResetPasswordView(View):
             try:
                 username = request.POST['username']
                 user = User.objects.get(username=username)
-                code = str(random.randint(1000000, 9999999))
+                code = str(random.randint(10000000, 99999999))
                 request.session['reset_code'] = code
                 send_mail(
                     'OTP from MingleVision',
