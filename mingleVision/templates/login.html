@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login | MingleCall</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" type="image/png" href="static/images/logo.ico">
+    <link rel="stylesheet" href="static/styles/style.css">
+    <link rel="stylesheet" href="static/styles/alert.css">
+    <script src="static/js/alert.js"></script>
+</head>
+
+<body>
+    <section class="container">
+        <div class="login-container">
+            <div class="circle circle-one"></div>
+            <div class="form-container">            
+                {% if messages %}
+                {% for message in messages %}
+                <div id="alert" class="{{message.tags}}">
+                  <span class="{{message.tags}}btn" onclick="closeAlert()">&times;</span>
+                  <b>{{message}}</b>
+                </div>
+                {% endfor %}
+                {% endif %}
+                <h1 class="opacity">LOGIN</h1>
+                <form action="login" method="post">
+                {% csrf_token %}
+                    <input type="text" name="username" placeholder="USERNAME" required/>
+                    <input type="password" name="password" placeholder="PASSWORD" required/>
+                    <button class="opacity">SUBMIT</button>
+                </form>
+                <div class="register-forget opacity">
+                    <a href="/register">REGISTER</a>
+                    <a href="/reset-password">FORGOT PASSWORD</a>
+                </div>
+            </div>
+            <div class="circle circle-two"></div>
+        </div>
+        <div class="theme-btn-container"></div>
+    </section>
+</body>
+<script>
+  
+    
+</script>
+
+</html>

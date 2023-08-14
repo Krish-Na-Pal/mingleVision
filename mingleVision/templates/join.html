@@ -1,0 +1,54 @@
+{% extends 'header.html' %}
+{% block title %}Lobby{% endblock title %}
+{% block div %}
+<p id="current-time">Loading...</p>
+    <a class="nav__link" id="create__room__btn" href="/lobby">
+        Create Room
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ede0e0" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"/></svg>
+    </a>
+{% endblock div %}
+{% block body %}
+    {% block main %}
+        <div id="form__container">
+
+            <div class="circle circle-one"></div>
+            <div class="form-container">            
+                {% if messages %}
+                {% for message in messages %}
+                <div id="alert" class="{{message.tags}}">
+                  <span class="{{message.tags}}btn" onclick="closeAlert()">&times;</span>
+                  <b>{{message}}</b>
+                </div>
+                {% endfor %}
+                {% endif %}
+                <h1>Join Room</h1>
+                
+                
+                <form id="lobby__form" method="post" action="/join">
+                {% csrf_token %}
+                    <div class="form__field__wrapper">
+                        <input type="text" name="roomName" required placeholder="ROOM NAME" />
+                    </div>
+
+                    <div class="form__field__wrapper">
+                        <input type="text" name="roomCode"  placeholder="ROOM CODE" required/>
+                    </div>
+
+                    <div class="form__field__wrapper">
+                        <button class="opacity" type="submit">Go to Room 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/></svg>
+                    </button>
+                    </div>
+                </form>
+            <div class="register-forget opacity">
+                <a href="/forgotpassword"></a>
+                <a href="/deleteRoom" style=" font-size: 25px;font-family: 'Times New Roman', Times, serif;">DELETE ROOM🛑</a>
+            </div>
+            
+            </div>
+            <div class="circle circle-two"></div>
+        </div>
+
+    {% endblock main %}
+
+{% endblock body %}

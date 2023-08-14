@@ -1,0 +1,86 @@
+{% extends 'header.html' %}
+{% block title %}{% endblock title %}
+{% block link %}
+    <link rel='stylesheet' type='text/css' media='screen' href='static/styles/main.css'>
+    <link rel="stylesheet" type='text/css' media='screen' href="static/styles/style.css">
+{% endblock link %}
+{% block div %}
+            <p id="current-time">Loading...</p>
+            <a href="/login"><span>Sign In</span></a>
+            <a class="nav__link" id="create__room__btn" href="/join">
+                Join Room
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ede0e0" viewBox="0 0 24 24">
+                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"/>
+              </svg>
+            </a>
+            {% endblock div %}
+
+{% block body %}
+{% block main %}
+<div id="main__container">
+    
+    <div id="row1__container">
+        <div id="text1__container">
+            <h1>Welcome to <span>MingleVision</span></h1>
+            <h2>Your Ultimate Video Calling Solution!</h2>
+            <p>Experience seamless and crystal-clear video calls from the comfort of your browser with MingleVision.
+                My innovative web application brings you closer to your loved ones, colleagues, and clients, no matter
+                where they are in the world.</p>
+
+        </div>
+        <div id="image1__container">
+            <img class="img" src="static/images/logo2.png" alt="" srcset="">
+        </div>
+    </div>
+        <div id="row2__container">
+            <div id="image2__container">
+                <img class="img" src="static/images/logo5.jpg" alt="" srcset="">
+            </div>
+            <div id="text2__container">
+                <h2>📺 High-Quality <span>Video</span> and <span>Audio!</span></h2>
+                <p>Enjoy lifelike conversations with stunning HD video and crisp audio. MingleVision ensures that every smile, laugh, and important detail is captured in real-time.</p>
+    
+            </div>
+        </div>
+        <div id="row3__container">
+            <div id="image2__container">
+                <img class="img" src="static/images/Privacy.png" alt="" srcset="">
+            </div>
+            <div id="text2__container">
+                <h2>🔒 <span>Privacy</span> is Paramount</h2>
+                <h2>  </h2>
+                <p>Your security is my priority. MingleVision encryption protocols are ensure your conversations remain private and protected from end to end</p>
+    
+            </div>
+        </div>
+        <div id="row4__container">
+            <div id="image2__container">
+                <img class="img" src="static/images/group.png" alt="" srcset="">
+            </div>
+            <div id="text2__container">
+                <h2>🗨️ <span>Chat</span> On-the-Go</h2>
+                <h2>  </h2>
+                <p> Need to share a quick link or important information during a call? Our integrated chat feature lets you send messages without disrupting the conversation.</p>
+    
+            </div>
+        </div>
+        
+        <div id="row5__container">
+            <div id="text2__container">
+                <h1>Thanks to.</h1>
+                <h2><a href="https://www.agora.io/"><span>Agora.io</span></a> | <a href="https://www.youtube.com/c/DennisIvy"><span>Dennis Ivy</span></a> | <a href="https://www.youtube.com/@CodeWithHarry"><span>Code with Harry</span></a> <p></p> <a href="https://chat.openai.com/"><span>Chat GPT</span></a> | <a href="https://www.google.com/"><span>Google</span></a></h2>
+            </div>
+                
+        </div>
+        <div id="row5__container">
+            <h2>Made by <span>Krishnapal Zala</span></h2>
+        </div>
+    
+</div>
+{% endblock main %}
+
+{% endblock body %}
+
+{% block script %}
+<script type="text/javascript" src="static/js/lobby.js"></script>
+{% endblock script %}

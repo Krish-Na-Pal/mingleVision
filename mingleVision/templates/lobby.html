@@ -1,0 +1,48 @@
+{% extends 'header.html' %}
+{% block title %}Lobby{% endblock title %}
+{% block body %}
+{% block main %}
+<div id="form__container">
+
+    <div class="circle circle-one"></div>
+    <div class="form-container">            
+        {% if messages %}
+        {% for message in messages %}
+        <div id="alert" class="{{message.tags}}">
+          <span class="{{message.tags}}btn" onclick="closeAlert()">&times;</span>
+          <b>{{message}}</b>
+        </div>
+        {% endfor %}
+        {% endif %}
+        <h1>Create Room</h1>
+        
+        <form id="lobby__form" method="post" action="/lobby">
+        {% csrf_token %}
+            <div class="form__field__wrapper">
+                <input type="text" name="roomName" required placeholder="ROOM NAME" />
+            </div>
+
+            <div class="form__field__wrapper"><div class="input-with-button">
+                <input type="text" name="roomCode" placeholder="ROOM CODE" id="randomInput" readonly required/>
+                <button type="button" id="generateButton">Generate</button>
+            </div>
+            </div>
+
+            <div class="form__field__wrapper">
+                <button class="opacity" type="submit">Go to Room 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/></svg>
+            </button>
+            </div>
+    </form>
+    
+    </div>
+    <div class="circle circle-two"></div>
+</div>
+
+{% endblock main %}
+
+{% endblock body %}
+    
+{% block script %}
+<script type="text/javascript" src="static/js/lobby.js"></script>
+{% endblock script %}
