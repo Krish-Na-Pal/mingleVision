@@ -18,7 +18,7 @@ EMAIL_HOST_USER = '<YOUR EMAIL ID>'
 EMAIL_HOST_PASSWORD = '<YOUR EMAIL PASS KEY>'
 ```
 * 5 - Create superuser for django admin
-```terminal
+```command line
 
 python manage.py createsuperuser
 ```
@@ -29,7 +29,7 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 * 7 - Run server
-```terminal
+```command line
 
 python manage.py runserver
 ```
