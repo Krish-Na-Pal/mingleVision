@@ -23,7 +23,7 @@ EMAIL_HOST_PASSWORD = '<YOUR EMAIL PASS KEY>'
 python manage.py createsuperuser
 ```
 * 6 - Make migrations and migrate objects in terminal
-```command
+```command line
 
 python manage.py makemigrations
 python manage.py migrate
