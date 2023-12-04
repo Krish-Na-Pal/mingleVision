@@ -1,4 +1,4 @@
-# MINGLEVISION
+# MigleVision
 A real time messaging & video calling.
 Live : https://minglevision.pythonanywhere.com/
 # Requirements
